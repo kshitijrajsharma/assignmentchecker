@@ -35,15 +35,19 @@ if st.button("Check Assignment"):
             with open(uploaded_file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
 
-            if not os.path.exists(uploaded_file_path):
+            if os.path.exists(uploaded_file_path):
+
+                result = subprocess.run(
+                    ["otter", "check", uploaded_file_path],
+                    capture_output=True,
+                    text=True,
+                )
+
+                st.success("Assignment check completed!")
+                st.text(result.stdout)
+                st.text(result.stderr)
+            else:
                 st.error("Your submission filename is inconsistent")
 
-            result = subprocess.run(
-                ["otter", "check", uploaded_file_path], capture_output=True, text=True
-            )
-
-        st.success("Assignment check completed!")
-        st.text(result.stdout)
-        st.text(result.stderr)
     else:
         st.error("Please provide both a GitHub URL and a Python file.")
