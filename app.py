@@ -31,6 +31,8 @@ if st.button("Check Assignment"):
             #     subprocess.run(["pip", "install", "-r", requirements_path])
 
             uploaded_file_path = os.path.join(repo_dir, uploaded_file.name)
+            if not os.path.exists(uploaded_file_path):
+                st.error("Your submission filename is inconsistent")
             with open(uploaded_file_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
 
