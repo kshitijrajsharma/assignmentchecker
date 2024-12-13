@@ -6,3 +6,4 @@ torchaudio
 matplotlib
 einops
 otter-grader
+ipykernel
