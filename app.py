@@ -7,7 +7,7 @@ from git import Repo
 
 st.title("Assignment Checker")
 st.write(
-    "This application checks assignments using Otter Grader. Source GitHub should be set up accordingly to how Otter Grader works with tests."
+    "This application checks assignments using Otter Grader. Source GitHub must be set up accordingly to how Otter Grader works with tests."
 )
 
 github_url = st.text_input("Enter source GitHub URL:")
