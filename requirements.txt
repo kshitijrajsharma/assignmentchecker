@@ -1,0 +1,8 @@
+gitpython
+streamlit
+torch 
+torchvision 
+torchaudio
+matplotlib
+einops
+otter-grader
